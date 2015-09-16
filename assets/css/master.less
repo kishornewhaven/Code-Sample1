@@ -1,0 +1,134 @@
+@white:#fff;
+@grey: #ddd;
+@light-grey: #f9f9f9;
+@black: #000;
+@primary:#286090;
+@primary-border:#204d74;
+@error:#f2dede;
+
+body{
+  font:14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 16px;
+  margin:0px;
+  padding:0px;
+}
+.main-content{
+  width:100%;
+}
+.grid{
+  width:100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  background: @white;
+  border:1px solid @grey;
+  thead{
+    tr{
+      th{
+        border-bottom:2px solid @grey;
+        padding:8px;
+      border-right:1px solid @grey;
+      }
+    }
+  }
+  tbody{
+    tr{
+      &:nth-of-type(odd){
+        background-color: @light-grey;
+
+      }
+      td{
+        &:first-child{
+          text-align: center;
+        }
+        border-top:1px solid @grey;
+        border-right:1px solid @grey;
+      }
+    }
+  }
+}
+.well{
+  background: #f5f5f5;
+  padding:20px;
+}
+.error{
+  background: @error;
+  padding:10px;
+}
+.inline-error{
+  color:#a94442;
+}
+.pull-left{
+  float:left;
+}
+.pull-right{
+  float:right;
+}
+.btn{
+  padding: 6px 12px;
+  margin-bottom: 0;
+   text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #adadad;
+  border-radius: 4px;
+}
+.btn-primary{
+  background-color: @primary;
+  border-color: @primary-border;
+  color:@white;
+}
+.btn-primary:disabled{
+  background-color:lighten(@primary, 30%) ;
+}
+form{
+  width:100%;
+  label{
+    display:block;
+    margin-top:15px;
+  }
+  input{
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+     color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    box-sizing: border-box;
+  }
+  .form-footer{
+    margin-top:20px;
+  }
+}
+.caret-down {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid @black;
+  float:right;
+  margin-top:5px;
+}
+.list-users {
+  th:not(:first-child){
+    cursor: pointer;
+  }
+  th:last-child{
+    cursor: initial;
+  }
+}
+
+@media(min-width:768px) {
+  .main-content{
+    width:600px;
+    margin:0 auto;
+  }
+}

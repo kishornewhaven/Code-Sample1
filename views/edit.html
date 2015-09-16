@@ -1,0 +1,33 @@
+<form name="editform" novalidate>
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" class="form-control" id="firstName" placeholder="First Name" required ng-model="user.First" >
+        <div class="inline-error"
+             ng-show="editform.firstName.$invalid && editform.firstName.$dirty">
+            <span ng-show="editform.firstName.$error.required"> First Name is Required </span>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" class="form-control" id="lastName" placeholder="Last Name" required ng-model="user.Last">
+        <div class="inline-error"
+             ng-show="editform.lastName.$invalid && editform.lastName.$dirty">
+            <span ng-show="editform.lastName.$error.required"> Last Name is Required </span>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" name="age" class="form-control" id="age" placeholder="Age" ng-model="user.Age">
+        <div class="inline-error"
+             ng-show="editform.age.$invalid && editform.age.$dirty">
+            <span ng-show="editform.age.$error.number"> Please enter a valid Age </span>
+
+        </div>
+    </div>
+    <div class="form-footer">
+<button class="btn btn-default" type="reset">Clear</button>
+    <button type="submit" class="btn btn-primary pull-right" ng-disabled="editform.$invalid"  ng-click="save(user)">Save</button>
+    </div>
+</form>

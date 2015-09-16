@@ -1,0 +1,23 @@
+<div class="error" ng-show="data.error">
+    There is an error in processing your request. Please try again
+</div>
+<table class="list-users grid" ng-hide="data.error">
+    <thead>
+    <tr>
+        <th>SNO</th>
+        <th ng-click="sortBy('First')">First Name <span class="caret-down"></span></th>
+        <th ng-click="sortBy('Last')">Last Name<span class="caret-down"></span></th>
+        <th ng-click="sortBy('Age')">Age<span class="caret-down"></span></th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="user in users | orderBy:sort">
+        <td>{{$index+1}}</td>
+        <td>{{user.First}}</td>
+        <td>{{user.Last}}</td>
+        <td>{{user.Age}}</td>
+        <td><button type="button" class="btn btn-default" ng-click="edit(user)">Edit</button></td>
+    </tr>
+    </tbody>
+</table>
